@@ -1,4 +1,0 @@
-PC spec
-
-OS X Yosemite
-10.10.5
