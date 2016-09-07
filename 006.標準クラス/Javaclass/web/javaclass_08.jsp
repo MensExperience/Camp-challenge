@@ -20,7 +20,7 @@
         //８．ファイルに自己紹介を書き出し、保存してください。
         
         //ファイルの場所
-        File text = new File ("text.txt");
+        File text = new File("text.txt");
       
         //ファイルを開く
         FileWriter fw = new FileWriter(text);
@@ -28,14 +28,14 @@
         //まとめて書き込む
         BufferedWriter bw = new BufferedWriter(fw);
         
-        bw.write("名前は上江洲智春です");
-        bw.write("誕生日は３月２２日です");
-        bw.write("血液型はB型です");
-        bw.write("よろしくお願いします！");
+        bw.write("名前は上江洲智春です<br>");
+        bw.write("誕生日は３月２２日です<br>");
+        bw.write("血液型はB型です<br>");
+        bw.write("よろしくお願いします！<br>");
         
         //ファイルを閉じる
         bw.close();
-        
+         
         %>        
     </body>
 </html>
