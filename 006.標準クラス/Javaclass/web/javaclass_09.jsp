@@ -28,7 +28,7 @@
         //まとめて読み込む
         String str;
         while((str = br.readLine()) != null){
-            out.print(str + "<br>");
+            out.print(str);
         }
 
         //ファイルクローズ
