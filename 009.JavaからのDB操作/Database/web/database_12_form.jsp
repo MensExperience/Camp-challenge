@@ -38,9 +38,7 @@
                         out.print("<option value=\"" + d + "\">" + d + "</option>");
                     }    
                     %>
-                 </select><br>
-                 <%-- AND検索：<input type ="radio" name="search" value="1"><br>
-                OR検索：<input type ="radio" name="search" value="2"><br><br> --%>
+                 </select><br><br>
                 <input type="submit" value="送信">
             </p>        
         </form>
