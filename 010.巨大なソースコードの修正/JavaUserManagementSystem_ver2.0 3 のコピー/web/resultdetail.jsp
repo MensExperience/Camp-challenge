@@ -16,10 +16,9 @@
         <title>JUMSユーザー情報詳細画面</title>
     </head>
     <body>
-            <h1>詳細情報</h1>
+        <h1>詳細情報</h1>
         名前:<%= udd.getName()%><br>
-        生年月日:<%= udd.getBirthday()%><br>
-        
+        生年月日:<%= udd.getBirthday()%><br>    
         <%--　＜修正＞　種別を名目で表示する　種別:<%= udd.getType()%>　--%>     
         種別:<%= jh.exTypenum(udd.getType())%><br>
         電話番号:<%= udd.getTell()%><br>
@@ -27,14 +26,13 @@
         登録日時:<%= udd.getNewDate()%><br>
         <form action="Update" method="POST">
             <%--　＜追記＞　アクセスチェック　--%>
-            <input type="hidden" name="ac" value="<%= hs.getAttribute("ac")%>">
-            
+            <input type="hidden" name="ac" value="<%= hs.getAttribute("ac")%>">            
         <input type="submit" name="update" value="変更" style="width:100px">
         </form>
+            
         <form action="Delete" method="POST">
             <%--　＜追記＞　アクセスチェック　--%>
-            <input type="hidden" name="ac" value="<%= hs.getAttribute("ac")%>">
-            
+            <input type="hidden" name="ac" value="<%= hs.getAttribute("ac")%>">            
         <input type="submit" name="Delete" value="削除" style="width:100px">
         </form>
     </body>

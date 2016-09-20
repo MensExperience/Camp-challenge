@@ -43,6 +43,9 @@ public class ResultDetail extends HttpServlet {
 
             UserDataDTO resultData = UserDataDAO .getInstance().searchByID(searchData);
             session.setAttribute("resultData", resultData);
+                      
+            //アクセスチェックの為のランダム変数
+            session.setAttribute("ac", (int) (Math.random() * 1000));
             
             //　フォワード
             request.getRequestDispatcher("/resultdetail.jsp").forward(request, response);  

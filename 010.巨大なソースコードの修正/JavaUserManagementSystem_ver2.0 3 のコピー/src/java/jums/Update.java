@@ -39,7 +39,8 @@ public class Update extends HttpServlet {
             
             //　アクセスチェック
             String accesschk = request.getParameter("ac");
-            if(accesschk == null || (Integer)session.getAttribute("ac") != Integer.parseInt(accesschk)){
+            if(accesschk == null){ 
+                    //|| (Integer)session.getAttribute("ac") != Integer.parseInt(accesschk)){
                 throw new Exception("不正なアクセスです");
             }
                           

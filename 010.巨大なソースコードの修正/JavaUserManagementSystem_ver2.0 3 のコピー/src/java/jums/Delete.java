@@ -35,11 +35,11 @@ public class Delete extends HttpServlet {
         //　エンコード
         request.setCharacterEncoding("UTF-8");
         
-        //　アクセスチェック
-        String accesschk = request.getParameter("ac");
-        if(accesschk == null || (Integer)session.getAttribute("ac") != Integer.parseInt(accesschk)){
-            throw new Exception("不正なアクセスです");
-        }
+       //　アクセスチェック
+            String accesschk = request.getParameter("ac");
+            if(accesschk == null || (Integer)session.getAttribute("ac") != Integer.parseInt(accesschk)){
+                throw new Exception("不正なアクセスです");
+            }
         
         //　フォワード
         request.getRequestDispatcher("/delete.jsp").forward(request, response);

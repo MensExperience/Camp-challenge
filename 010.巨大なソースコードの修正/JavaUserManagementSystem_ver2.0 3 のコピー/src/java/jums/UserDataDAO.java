@@ -263,8 +263,7 @@ public class UserDataDAO {
         try{
             con = DBManager.getConnection();
             
-            String sql = "DELETE FROM user_t WHERE usreID = ?";
-            
+            String sql = "DELETE FROM user_t WHERE userID = ?";            
             st = con.prepareStatement(sql);
             
             st.setInt(1, ud.getUserID());
