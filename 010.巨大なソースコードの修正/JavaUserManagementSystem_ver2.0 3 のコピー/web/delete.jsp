@@ -1,0 +1,43 @@
+<%@page import="jums.JumsHelper"
+        import="jums.UserDataDTO"
+        import="javax.servlet.http.HttpSession" %>
+<%
+    //　＜追記＞　セッション開始
+    HttpSession hs = request.getSession(); 
+    JumsHelper jh = JumsHelper.getInstance();
+    UserDataDTO udd = (UserDataDTO)request.getAttribute("resultData");
+%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+    <h1>削除確認</h1>
+    以下の内容を削除します。よろしいですか？
+    userID:<%= udd.getUserID()%>
+    名前:<%= udd.getName()%><br>
+    生年月日:<%= udd.getBirthday()%><br>
+    種別:<%= udd.getType()%><br>
+    電話番号:<%= udd.getTell()%><br>
+    自己紹介:<%= udd.getComment()%><br>
+    登録日時:<%= udd.getNewDate()%><br>
+    
+    <form action="DeleteResult?id=<%= udd.getUserID() %>" method="POST">
+      <%--　＜追記＞　アクセスチェック　--%>
+      <input type="hidden" name="ac" value="<%= hs.getAttribute("ac")%>">      
+      <input type="submit" name="YES" value="はい" style="width:100px">
+    </form>
+    <br>
+    <form action="ResultDetail" method="POST">
+      <%--　＜追記＞　アクセスチェック　--%>
+      <input type="hidden" name="ac" value="<%= hs.getAttribute("ac")%>">
+      <input type="submit" name="NO" value="詳細画面に戻る" style="width:100px">
+    </form>
+    
+    <%--　＜追記＞　ホーム画面へのリンク　--%>
+    <%=jh.home()%>
+    </body>
+</html>
